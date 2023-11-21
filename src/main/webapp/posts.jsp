@@ -46,10 +46,8 @@
 	function check_delete(id){
 		var a = confirm("정말로 삭제하겠습니까?");
 		if(a) {
-			location.href='deletepost.jsp?id=' + id;
-			location.href='posts.jsp';
+			location.href = 'deletepost.jsp?id=' + id;
 		}
-		else location.href='posts.jsp';
 	}
 </script>
 </head>
@@ -73,14 +71,14 @@
 	<th>Delete</th>
 </tr>
 <c:forEach items="${list}" var="u">
-	<tr onclick="location.href='view.jsp?id=${u.getSeq()}'">
-		<td>${u.getRegdate()}</td>
-		<td>${u.getSeq()}</td>
-		<td>${u.getTitle()}</td>
-		<td>${u.getWriter()}</td>
-		<td>${u.getContent()}</td>
-		<td>${u.getCategory()}</td>
-		<td>${u.getModdate()}</td>
+	<tr>
+		<td onclick="location.href='view.jsp?id=${u.getSeq()}'">${u.getRegdate()}</td>
+		<td onclick="location.href='view.jsp?id=${u.getSeq()}'">${u.getSeq()}</td>
+		<td onclick="location.href='view.jsp?id=${u.getSeq()}'">${u.getTitle()}</td>
+		<td onclick="location.href='view.jsp?id=${u.getSeq()}'">${u.getWriter()}</td>
+		<td onclick="location.href='view.jsp?id=${u.getSeq()}'">${u.getContent()}</td>
+		<td onclick="location.href='view.jsp?id=${u.getSeq()}'">${u.getCategory()}</td>
+		<td onclick="location.href='view.jsp?id=${u.getSeq()}'">${u.getModdate()}</td>
 		<td><a href="editform.jsp?id=${u.getSeq()}">Edit</a></td>
 		<td><a href="javascript:check_delete('${u.getSeq()}')">Delete</a></td>
 	</tr>
